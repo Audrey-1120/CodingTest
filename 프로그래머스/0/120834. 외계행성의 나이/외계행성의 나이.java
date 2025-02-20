@@ -1,14 +1,15 @@
 class Solution {
     public String solution(int age) {
+        
         StringBuilder builder = new StringBuilder();
-        
         String eng = "abcdefghij";
-        String[] ageArr = String.valueOf(age).split("");
+        String ageArr = String.valueOf(age);
         
-        for(int i = 0; i < ageArr.length; i++) {
-            builder.append(eng.charAt(Integer.valueOf(ageArr[i])));
+        for(char c : ageArr.toCharArray()) {
+            builder.append(eng.charAt(c - '0'));
         }
         
         return builder.toString();
+        
     }
 }
